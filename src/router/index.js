@@ -12,7 +12,7 @@ const routes = [
     path: '/letter/:letter',
     name: 'byLetter',
     component: MealList,
-  }
+  },
 
 ];
 
