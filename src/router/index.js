@@ -5,7 +5,7 @@ import MealList from '../views/MealList.vue';
 const routes = [
   {
     path: '/',
-    name: 'Home',
+    name: 'home',
     component: Home,
   },
   {
