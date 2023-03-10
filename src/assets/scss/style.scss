@@ -1,0 +1,8 @@
+@use './abstracts' as *;
+
+.test{
+  background: $msInfo;
+  .ms-nav-link{
+    color: $msError;
+  }
+}

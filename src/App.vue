@@ -1,5 +1,5 @@
 <template>
-  <div class="ms-container">
+  <div class="ms-container test">
     <header class="ms-nav">
       <router-link :to="{name: 'home'}">
         <h1>Home</h1>
@@ -25,5 +25,6 @@
 <script setup>
 </script>
 
-<style scoped>
+<style lang="scss">
+@import './assets/scss/style.scss';
 </style>
