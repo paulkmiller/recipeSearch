@@ -10,10 +10,15 @@
 </template>
 
 <script setup>
-import { computed } from 'vue';
+import { computed, onMounted } from 'vue';
 import store from '../store';
+import axiosClient from '../axiosClient';
 
-const meals = computed(() => store.state.meals);
-const letters = 'ABCDEFGHIJKLMNOP'.split('');
+const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 
+onMounted(async () => {
+  const response = await axiosClient.get('/list.php?i=list');
+  console.log(response.data);
+  // store.commit('setMeals', data);
+});
 </script>
