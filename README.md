@@ -1,7 +1,3 @@
-# Vue 3 + Vite
+# Vue Meal Search
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
-
-## Recommended IDE Setup
-
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+I'm tired of thinking when it comes to making dinner. I have ingredients and I want to make something, because I am hungry, not because I like thinking. To this end, I'll utilize a free API from [TheMealDB](https://www.themealdb.com/api.php) and make this little app in Vue. I want to be able to search ingredients via recipe name or ingredients and be recommended how to make it or what to make. Simple enough. 
