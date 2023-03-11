@@ -31,7 +31,7 @@ const router = new VueRouter({
   ],
 });
 
-VueRouter.beforeEach((to, from, next) => {
+router.beforeEach((to, from, next) => {
   document.title = to.meta.title + TitleSeparator + SiteName;
   next();
 });

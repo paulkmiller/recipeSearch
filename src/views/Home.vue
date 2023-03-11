@@ -12,7 +12,7 @@
 
 <script setup>
 import { computed, onMounted, ref } from 'vue';
-import store from '../vuex/store';
+import storeConfig from '../vuex/store';
 import api from '../API';
 
 const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
