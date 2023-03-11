@@ -9,6 +9,7 @@ module.exports = {
   ],
   overrides: [
   ],
+  // parser: 'eslint',
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
@@ -17,5 +18,6 @@ module.exports = {
     'vue',
   ],
   rules: {
+    'vue/comment-directive': 'off'
   },
 };
