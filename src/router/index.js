@@ -1,24 +1,24 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import Home from '../views/Home.vue';
-import MealList from '../views/MealList.vue';
+import Home from '@/views/Home.vue';
+import MealList from '@/views/MealList.vue';
 
-const routes = [
-  {
-    path: '/',
-    name: 'home',
-    component: Home,
-  },
-  {
-    path: '/letter/:letter',
-    name: 'byLetter',
-    component: MealList,
-  },
-
-];
-
-const router = createRouter({
+export default createRouter({
   history: createWebHistory(),
-  routes,
-});
-
-export default router;
+  routes: [
+    {
+      path: '/',
+      name: 'home',
+      component: Home,
+    },
+    {
+      path: '/letter/:letter',
+      name: 'byLetter',
+      component: MealList,
+    },
+    // import the About component and add a route for it
+    // {
+    //   path: '/about',
+    //   component: () => import('@/views/About.vue'),
+    // },
+  ],
+})
