@@ -25,6 +25,7 @@
 <script setup>
 </script>
 
-<style lang="scss">
+<!-- this is already implicitly happening via Vite  -->
+<!-- <style lang="scss">
 @import './assets/scss/style.scss';
-</style>
+</style> -->
