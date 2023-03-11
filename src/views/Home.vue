@@ -2,8 +2,8 @@
   <div>
     <input type="text" class="ms-search" v-model="search" placeholder="Search for a meal">
   </div>
-  <div class="ms-cards">
-    <router-link :to="{name: 'byLetter', params: {letter}}" v-for="letter of letters" :key="letter">
+  <div>
+    <router-link :to="{name: 'byLetter', params: {letter}}" v-for="letter of letters" :key="letter" class="ms-letters">
       {{ letter }}
     </router-link>
   </div>

@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import Home from '@/views/Home.vue';
 import MealList from '@/views/MealList.vue';
+import Home from '../views/Home.vue';
 
 export default createRouter({
   history: createWebHistory(),
@@ -21,4 +21,4 @@ export default createRouter({
     //   component: () => import('@/views/About.vue'),
     // },
   ],
-})
+});

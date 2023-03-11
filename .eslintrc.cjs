@@ -4,8 +4,10 @@ module.exports = {
     es2021: true,
   },
   extends: [
-    'plugin:vue/vue3-essential',
+    'eslint:recommended',
+    'plugin:import/recommended',
     'airbnb-base',
+    'plugin:vue/vue3-essential',
   ],
   overrides: [
   ],
@@ -17,5 +19,14 @@ module.exports = {
     'vue',
   ],
   rules: {
+  },
+  settings: {
+    'import/resolver': {
+      alias: {
+        map: [
+          ['@', './src'],
+        ],
+      },
+    },
   },
 };
