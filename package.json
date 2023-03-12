@@ -10,6 +10,7 @@
     "lint": "eslint src --ext .js",
     "lint:fix": "npm run lint -- --fix",
     "test": "run lint && npm run test:run",
+    "llint:fix": "./node_modules/.bin/eslint $SRC --fix",
     "test:run": "jest"
   },
   "dependencies": {

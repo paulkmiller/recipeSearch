@@ -6,9 +6,7 @@ import eslint from '@rollup/plugin-eslint'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
-    vue({
-      reactivityTransform: true,
-    }),
+    vue(),
     { 
       ...eslint(),
       enforce: 'pre',
