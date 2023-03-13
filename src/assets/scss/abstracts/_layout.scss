@@ -4,7 +4,7 @@
 
 body {
   margin: 0;
-  background: $msGreyLight;
+  background: $msGreyDark;
   #app {
     max-width: 1920px;
     margin: 0 auto;
@@ -29,6 +29,7 @@ body {
         transition: background-color 0.25s;
         &:hover {
           background-color: $msInfo;
+          color: $msWhite;
         }
       }
       .ms-nav-home{
@@ -45,6 +46,9 @@ body {
       padding: 0.6em 1.2em;
       .ms-routerLink{ 
         margin-bottom: 1em;
+        a {
+          color: $msWhite;
+        }
       }
       input {
         align-items: center;
@@ -69,6 +73,7 @@ body {
       display: flex;
       justify-content: center;
       align-items: center;
+      color: $msWhite;
     }
     button {
       border: 1px solid transparent;
