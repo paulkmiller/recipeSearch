@@ -1,8 +1,2 @@
-@use './abstracts' as a;
+@use './abstracts' as *;
 
-.test{
-  background: a.$msInfo;
-  .ms-nav-link{
-    color: a.$msError;
-  }
-}

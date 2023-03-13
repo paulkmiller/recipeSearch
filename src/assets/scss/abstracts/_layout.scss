@@ -8,29 +8,81 @@ body {
   #app {
     max-width: 1920px;
     margin: 0 auto;
-    padding: 2rem;
-    text-align: center;
-  }
-  a {
-
-    text-decoration: inherit;
-    :hover {
-      color: $msInfo;
+    nav.ms-nav{
+      display: flex;
+      min-height: 64px;
+      height: 100%;
+      align-items: stretch;
+      background-color: $msWhite;
+      .ms-nav-links {
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+        align-items: center;
+      }
+      .ms-nav-home,
+      .ms-nav-link {
+        display: inline-flex;
+        padding: 0 1.2em;
+        border: 1px solid transparent;
+        cursor: pointer;
+        transition: background-color 0.25s;
+        &:hover {
+          background-color: $msInfo;
+        }
+      }
+      .ms-nav-home{
+        align-items: center;
+      }
+      .ms-nav-link {
+        align-items: center;
+        height: 100%;
+      }
     }
-  }
-  button {
-    border-radius: 8px;
-    border: 1px solid transparent;
-    padding: 0.6em 1.2em;
-    background-color: $msWhite;
-    cursor: pointer;
-    transition: border-color 0.25s;
-    :hover {
-      border-color: $msInfo;
+    main.ms-main{
+      display: grid;
+      text-align: center;
+      padding: 0.6em 1.2em;
+      .ms-routerLink{ 
+        margin-bottom: 1em;
+      }
+      input {
+        align-items: center;
+        border: 1px solid transparent;
+        border-radius: 0.375em;
+        box-shadow: none;
+        display: inline-flex;
+        height: 2.5em;
+        justify-content: flex-start;
+        padding-bottom: calc(0.25em - 1px);
+        padding-left: calc(0.5em - 1px);
+        padding-right: calc(0.5em - 1px);
+        padding-top: calc(0.25em - 1px);
+        position: relative;
+        vertical-align: top;
+        &.ms-search {
+          
+        }
+      }
     }
-    :focus,
-    :focus-visible {
-      outline: 4px auto -webkit-focus-ring-color;
+    footer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    button {
+      border: 1px solid transparent;
+      padding: 0.6em 1.2em;
+      background-color: $msWhite;
+      cursor: pointer;
+      transition: border-color 0.25s;
+      :hover {
+        border-color: $msInfo;
+      }
+      :focus,
+      :focus-visible {
+        outline: 4px auto -webkit-focus-ring-color;
+      }
     }
   }
 }

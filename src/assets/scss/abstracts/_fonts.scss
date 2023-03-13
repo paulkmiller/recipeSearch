@@ -10,20 +10,24 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
   body{
-
-    a {
-      font-weight: 500;
-      color: $msBlack;
-    }
-    h1 {
-      font-size: 3.2em;
-      line-height: 1.1;
-    }
-    button {
-      font-size: 1em;
-      font-weight: 500;
-      font-family: inherit;
+    #app {
+      a {
+        font-weight: 500;
+        color: $msBlack;
+        text-decoration: inherit;
+        :hover {
+          color: $msInfo;
+        }
+      }
+      h1 {
+        font-size: 3.2em;
+        line-height: 1.1;
+      }
+      button {
+        font-size: 1em;
+        font-weight: 500;
+        font-family: inherit;
+      }
     }
   }
-
 }

@@ -1,9 +1,12 @@
 <template>
-  <div>
+  <div class="ms-routerLink">
     <input type="text" class="ms-search" v-model="search" placeholder="Search for a meal">
   </div>
-  <div>
-    <router-link :to="{name: 'byLetter', params: {letter}}" v-for="letter of letters" :key="letter" class="ms-letters">
+  <div class="ms-routerLink">
+    <router-link
+      :to="{name: 'byLetter', params: {letter}}"
+      v-for="letter of letters" :key="letter"
+      class="ms-letters">
       {{ letter }}
     </router-link>
   </div>
@@ -16,7 +19,7 @@ import store from '@/store';
 import axiosClient from '@/axiosClient';
 
 const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
-const ingredients = ref([])
+const ingredients = ref([]);
 
 onMounted(async () => {
   const response = await axiosClient.get('/list.php?i=list');
