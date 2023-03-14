@@ -6,17 +6,22 @@
       v-model="search"
       placeholder="Search for a meal"
       @change="searchMeals"
-    >
+    />
   </div>
-  <div class="grid">
-    <div v-for="meal of meals" :key="meal.idMeal">
-      <img :src="meal.strMealThumb" :alt="meal.strMeal" class="meal__image"/>
-      <h3 class="meal__name">{{ meal.strMeal }}</h3>
-      <div>
+  <div class="product-grid">
+    <div
+      v-for="meal of meals"
+      :key="meal.idMeal"
+      class="card stacked"
+      :class="isFeatured ? 'featured' : ''"
+    >
+      <img :src="meal.strMealThumb" :alt="meal.strMeal" class="card__img" />
+      <div class="card__content">
+        <h2 class="card__title">{{ meal.strMeal }}</h2>
+        <p class="card__category">{{ meal.strCategory }}</p>
         <a :href="meal.strYoutube" target="_blank">YouTube</a>
-        <router-link to="/">
-          View
-        </router-link>
+
+        <router-link to="/"> / View</router-link>
       </div>
     </div>
   </div>

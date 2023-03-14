@@ -1,0 +1,10 @@
+@use '@/assets/scss/abstracts/colors' as *;
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 64px;
+  color: $msWhite;
+  background: $msGreyDark;
+}

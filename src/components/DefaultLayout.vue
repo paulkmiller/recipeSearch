@@ -1,10 +1,8 @@
 <template>
-  <div>
-    <NavMain />
-    <main class="main">
-      <router-view />
-    </main>
-  </div>
+  <NavMain />
+  <main class="main container">
+    <router-view />
+  </main>
 </template>
 
 <script setup>
