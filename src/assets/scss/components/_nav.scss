@@ -6,12 +6,6 @@ nav.nav{
   height: 100%;
   align-items: stretch;
   background-color: $msWhite;
-  .nav__links {
-    display: flex;
-    justify-content: flex-end;
-    width: 100%;
-    align-items: center;
-  }
   .nav__home,
   .nav__link {
     display: inline-flex;
@@ -30,5 +24,11 @@ nav.nav{
   .nav__link {
     align-items: center;
     height: 100%;
+  }
+  .nav__links {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    align-items: center;
   }
 }

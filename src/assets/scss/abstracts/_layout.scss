@@ -184,6 +184,13 @@ picture {
   grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
 }
 
+.main-title {
+  background: linear-gradient(-45deg, blue, red);
+  padding: 0.125em 0.5em;
+  margin-bottom: 1em;
+  width: fit-content;
+}
+
 p.max-content {
   width: max-content;
 }
