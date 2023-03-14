@@ -9,9 +9,16 @@
     >
   </div>
   <div>
-    <p>
-      {{ meals }}
-    </p>
+    <div v-for="meal of meals" :key="meal.idMeal">
+      <img :src="meal.strMealThumb" :alt="meal.strMeal" />
+      <h3 class="meal__name">{{ meal.strMeal }}</h3>
+      <div>
+        <a :href="meal.strYoutube" target="_blank">YouTube</a>
+        <router-link to="/">
+          View
+        </router-link>
+      </div>
+    </div>
   </div>
 </template>
 
