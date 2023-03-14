@@ -1,10 +1,13 @@
 // all non component specific layout rules
+// 
+// actually it's just all the rules until I
+// get far enough to break them out into components
 
 @use './colors' as *;
 
 body {
   margin: 0;
-  background: $msGreyDark;
+  background: $msGreyLight;
   #app {
     max-width: 1920px;
     margin: 0 auto;
@@ -73,7 +76,9 @@ body {
       display: flex;
       justify-content: center;
       align-items: center;
+      min-height: 64px;
       color: $msWhite;
+      background: $msGreyDark;
     }
     button {
       border: 1px solid transparent;
