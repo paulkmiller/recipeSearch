@@ -1,27 +1,27 @@
 <template>
-  <div class="ms-container test">
+  <div class="container test">
     <header>
-      <nav class="ms-nav">
-        <router-link :to="{name: 'home'}" class="ms-nav-home" >
+      <nav class="nav">
+        <router-link :to="{name: 'home'}" class="nav__home" >
           Home
         </router-link>
-        <div class="ms-nav-links">
-          <router-link to="/" class="ms-nav-link">
+        <div class="nav__links">
+          <router-link to="/" class="nav__link">
             Search Meals
           </router-link>
-          <router-link to="/" class="ms-nav-link">
+          <router-link to="/" class="nav__link">
             Meals by Letter
           </router-link>
-          <router-link to="/" class="ms-nav-link">
+          <router-link to="/" class="nav__link">
             Meals by Ingredients
           </router-link>
         </div>
       </nav>
     </header>
-    <main class="ms-main">
+    <main class="main">
       <router-view />
     </main>
-    <footer class="ms-footer">
+    <footer class="footer">
         <p>© 2018 Gandalf</p>
     </footer>
   </div>

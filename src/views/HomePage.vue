@@ -1,12 +1,12 @@
 <template>
-  <div class="ms-routerLink">
-    <input type="text" class="ms-search" v-model="search" placeholder="Search for a meal">
+  <div class="routerLink">
+    <input type="text" class="search" v-model="search" placeholder="Search for a meal">
   </div>
-  <div class="ms-routerLink">
+  <div class="routerLink">
     <router-link
       :to="{name: 'byLetter', params: {letter}}"
       v-for="letter of letters" :key="letter"
-      class="ms-letters">
+      class="letters">
       {{ letter }}
     </router-link>
   </div>

@@ -8,20 +8,20 @@ body {
   #app {
     max-width: 1920px;
     margin: 0 auto;
-    nav.ms-nav{
+    nav.nav{
       display: flex;
       min-height: 64px;
       height: 100%;
       align-items: stretch;
       background-color: $msWhite;
-      .ms-nav-links {
+      .nav__links {
         display: flex;
         justify-content: flex-end;
         width: 100%;
         align-items: center;
       }
-      .ms-nav-home,
-      .ms-nav-link {
+      .nav__home,
+      .nav__link {
         display: inline-flex;
         padding: 0 1.2em;
         border: 1px solid transparent;
@@ -32,19 +32,19 @@ body {
           color: $msWhite;
         }
       }
-      .ms-nav-home{
+      .nav__home{
         align-items: center;
       }
-      .ms-nav-link {
+      .nav__link {
         align-items: center;
         height: 100%;
       }
     }
-    main.ms-main{
+    main.main{
       display: grid;
       text-align: center;
       padding: 0.6em 1.2em;
-      .ms-routerLink{ 
+      .routerLink{ 
         margin-bottom: 1em;
         a {
           color: $msWhite;
@@ -64,7 +64,7 @@ body {
         padding-top: calc(0.25em - 1px);
         position: relative;
         vertical-align: top;
-        &.ms-search {
+        &.search {
           
         }
       }
