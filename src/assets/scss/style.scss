@@ -1,2 +1,5 @@
-@use './abstracts' as *;
+// Vue3 + Vite automagically compiles everything.
+// Everything here is imported in the main.js file.
 
+@use './abstracts';
+@use './components';

@@ -8,9 +8,9 @@
       @change="searchMeals"
     >
   </div>
-  <div>
+  <div class="grid">
     <div v-for="meal of meals" :key="meal.idMeal">
-      <img :src="meal.strMealThumb" :alt="meal.strMeal" />
+      <img :src="meal.strMealThumb" :alt="meal.strMeal" class="meal__image"/>
       <h3 class="meal__name">{{ meal.strMeal }}</h3>
       <div>
         <a :href="meal.strYoutube" target="_blank">YouTube</a>
@@ -23,8 +23,7 @@
 </template>
 
 <script setup>
-import { computed } from '@vue/reactivity';
-import { ref } from 'vue';
+import { computed, ref } from 'vue';
 import store from '@/store';
 
 const search = ref('');

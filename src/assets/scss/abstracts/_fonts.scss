@@ -1,33 +1,51 @@
-@use './colors' as *;
+@use "./colors" as *;
 
 :root {
+  --ff-primary: Heebo, sans-serif;
+  --ff-secondary: Bungee, cursive;
+  --ff-accent: Bungee Shade, cursive;
+
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
+
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
-  body{
-    #app {
-      a {
-        font-weight: 500;
-        color: $msBlack;
-        text-decoration: inherit;
-        :hover {
-          color: $msInfo;
-        }
+  /* Inherit fonts for inputs and buttons */
+  body {
+    font-family: var(--ff-primary);
+    font-size: 1rem;
+    input,
+    button,
+    textarea,
+    select {
+      font: inherit;
+    }
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: var(--ff-secondary);
+    }
+    h1 {
+      font-size: 3.2em;
+      line-height: 1.1;
+    }
+    a {
+      font-weight: 500;
+      color: $msBlack;
+      text-decoration: inherit;
+      :hover {
+        color: $msInfo;
       }
-      h1 {
-        font-size: 3.2em;
-        line-height: 1.1;
-      }
-      button {
-        font-size: 1em;
-        font-weight: 500;
-        font-family: inherit;
-      }
+    }
+    button {
+      font-size: 1em;
+      font-weight: 500;
+      font-family: inherit;
     }
   }
 }

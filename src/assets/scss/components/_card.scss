@@ -1,0 +1,57 @@
+@use "../abstracts/colors" as *;
+
+.card {
+  aspect-ratio: 1 / 1.5;
+}
+
+.card__content {
+  background: white;
+  align-self: end;
+  margin: 0.5rem 0.5rem 2rem;
+  padding: 0.5rem;
+  box-shadow: 0 0.25rem 1rem rgb(0 0 0 / 0.1);
+}
+
+.card__img {
+  width: 100%;
+  aspect-ratio: 1 / 1.25;
+  object-fit: cover;
+}
+.card__title {
+  font-size: 1.25rem;
+  line-height: 1.1;
+  color: firebrick;
+}
+.card__price,
+.card__time {
+  font-size: 1.75rem;
+}
+.main-title {
+  font-size: clamp(2rem, 5vw + 1rem, 5rem);
+  line-height: 1;
+  color: white;
+
+  background: linear-gradient(-45deg, blue, red);
+  padding: 0.125em 0.5em;
+  margin-bottom: 1em;
+  width: fit-content;
+}
+
+@media (min-width: 60em) {
+  .card__img {
+    aspect-ratio: 1 / 1;
+  }
+
+  .card.featured {
+    grid-row: span 2;
+    grid-column: span 2;
+  }
+
+  .card.featured .card__img {
+    aspect-ratio: 1 / 1.25;
+  }
+
+  .card.featured .card__title {
+    font-size: 1.75rem;
+  }
+}

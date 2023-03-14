@@ -1,11 +1,11 @@
 <template>
-  <div class="routerLink">
+  <div class="routerLink routerLink__lettersContainer">
     <router-link
       :to="{ name: 'byLetter', params: {letter} }"
       v-for="letter of letters" :key="letter"
-      class="letters"
+      class="letter"
     >
-      <div class="letter">
+      <div class="routerLink__letters">
         {{ letter }}
       </div>
     </router-link>
@@ -14,6 +14,5 @@
 
 <script setup>
 const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
-
 
 </script>
