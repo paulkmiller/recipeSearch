@@ -7,10 +7,10 @@ import eslint from '@rollup/plugin-eslint'
 export default defineConfig({
   plugins: [
     vue(),
-    { 
+    {
       ...eslint(),
       enforce: 'pre',
-      apply: 'build'
+      apply: 'build',
     },
   ],
   resolve: {

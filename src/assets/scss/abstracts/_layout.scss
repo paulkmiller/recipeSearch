@@ -1,7 +1,7 @@
 // all non component specific layout rules
 // 
 // actually it's just all the rules until I
-// get far enough to break them out into components
+// get far enough to break them out into abstracts
 
 @use './colors' as *;
 
@@ -48,12 +48,23 @@ body {
       text-align: center;
       padding: 0.6em 1.2em;
       .routerLink{ 
-        margin-bottom: 1em;
+        margin: 1em;
         a {
-          color: $msWhite;
+          display: inline-flex;
+          flex-wrap: wrap;
+          font-size: 1.5em;
+          padding: 5px;
+          transition: background-color 0.25s;
+          &:is(:hover, :focus, :target, :active) {
+            color: $msPrimary;
+          }
+          &:visited {
+            color: $msInfo;
+          }
         }
       }
       input {
+        width: 100%;
         align-items: center;
         border: 1px solid transparent;
         border-radius: 0.375em;

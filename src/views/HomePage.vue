@@ -1,7 +1,5 @@
 <template>
-  <div class="routerLink">
-    <input type="text" class="search" v-model="search" placeholder="Search for a meal">
-  </div>
+
   <div class="routerLink">
     <router-link
       :to="{name: 'byLetter', params: {letter}}"
