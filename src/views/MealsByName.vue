@@ -1,5 +1,5 @@
 <template>
-  <div class="routerLink">
+  <div class="routerLink" id="search__MealsByName">
     <input
       type="text"
       class="search"
@@ -9,7 +9,9 @@
     >
   </div>
   <div>
-    {{ meals }}
+    <p>
+      {{ meals }}
+    </p>
   </div>
 </template>
 
@@ -24,7 +26,7 @@ const meals = computed(() => store.state.searchedMeals);
 function searchMeals() {
   store.dispatch('searchMeals', search.value);
 
-  axiosClient.get(`/search.php?s=${search.value}`);
+  // axiosClient.get(`/search.php?s=${search.value}`);
   // .then(response => {
   //   console.log(response.data);
   //   store.commit('setMeals', response.data);

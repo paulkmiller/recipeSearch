@@ -2,9 +2,10 @@
 
   <div class="routerLink">
     <router-link
-      :to="{name: 'byLetter', params: {letter}}"
+      :to="{ name: 'byLetter', params: {letter} }"
       v-for="letter of letters" :key="letter"
-      class="letters">
+      class="letters"
+    >
       {{ letter }}
     </router-link>
   </div>

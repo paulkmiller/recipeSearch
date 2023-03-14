@@ -1,3 +1,3 @@
-export function setSearchedMeals(state, meals) {
+export function SET_MEALS(state, meals) {
   state.searchedMeals = meals;
 }
