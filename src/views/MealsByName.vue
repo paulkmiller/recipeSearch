@@ -15,8 +15,10 @@
       class="card stacked"
       :class="isFeatured ? 'featured' : ''"
     >
-      <img :src="meal.strMealThumb" :alt="meal.strMeal" class="card__img" />
-      <div class="card__content">
+      <router-link :to="{name: 'mealDetails', params: {id: meal.idMeal}}">
+        <img :src="meal.strMealThumb" :alt="meal.strMeal" class="card__img" />
+      </router-link>
+        <div class="card__content">
         <h2 class="card__title">{{ meal.strMeal }}</h2>
         <p class="card__category">{{ meal.strCategory }}</p>
         <a :href="meal.strYoutube" target="_blank">YouTube</a>
@@ -28,22 +30,23 @@
 </template>
 
 <script setup>
-import { computed, ref } from 'vue';
+import { computed, ref, onMounted } from 'vue';
+import { useRoute } from 'vue-router';
 import store from '@/store';
 
+const route = useRoute();
 const search = ref('');
 const meals = computed(() => store.state.searchedMeals);
 
 function searchMeals() {
   store.dispatch('searchMeals', search.value);
-
-  // axiosClient.get(`/search.php?s=${search.value}`);
-  // .then(response => {
-  //   console.log(response.data);
-  //   store.commit('setMeals', response.data);
-  // })
-  // .catch(error => {
-  //   console.log(error);
-  // });
 }
+
+onMounted(() => {
+  search.value = route.params.name;
+  if (search.value) {
+    searchMeals();
+  }
+});
+
 </script>

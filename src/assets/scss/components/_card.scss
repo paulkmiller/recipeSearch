@@ -27,12 +27,11 @@
 
 @media (min-width: 60em) {
   .card {
-    max-height: 420px;
+    aspect-ratio: 1 / 1.45;
     &__img {
       aspect-ratio: 1 / 1;
     }
     &.featured {
-      max-height: 100%;
       grid-row: span 2;
       grid-column: span 2;
       .card__img {

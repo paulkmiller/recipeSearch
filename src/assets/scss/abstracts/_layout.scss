@@ -85,6 +85,7 @@ picture {
 .product-grid {
   display: grid;
   gap: 1rem;
+  // i love grid
   grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
 }
 

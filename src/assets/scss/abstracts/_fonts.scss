@@ -1,7 +1,7 @@
 @use "./colors" as *;
 
 :root {
-  --ff-primary: Heebo, sans-serif;
+  --ff-primary: Inter, sans-serif;
   --ff-secondary: Bungee, cursive;
   --ff-accent: Bungee Shade, cursive;
 
@@ -14,7 +14,6 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
-  /* Inherit fonts for inputs and buttons */
   body {
     font-family: var(--ff-primary);
     font-size: 1rem;
@@ -22,6 +21,7 @@
     button,
     textarea,
     select {
+      /* Inherit fonts for inputs and buttons */
       font: inherit;
     }
     h1,
