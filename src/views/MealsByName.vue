@@ -8,7 +8,7 @@
       @change="searchMeals"
     />
   </div>
-  <div class="product-grid">
+  <div class="meal-galleryGrid">
     <div
       v-for="meal of meals"
       :key="meal.idMeal"

@@ -1,8 +1,10 @@
 @use "./colors" as *;
 
+@import url("https://fonts.googleapis.com/css2?family=Gentium+Basic:ital,wght@0,400;0,700;1,400&family=Noto+Sans:wght@400;700&family=Playfair+Display+SC:wght@900&display=swap");
+
 :root {
-  --ff-primary: Inter, sans-serif;
-  --ff-secondary: Bungee, cursive;
+  --ff-primary: "Noto Sans", sans-serif;
+  --ff-secondary: "Gentium Basic", serif;
   --ff-accent: Bungee Shade, cursive;
 
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -52,5 +54,48 @@
       line-height: 1;
       color: white;
     }
+    .big-header-text {
+      font-family: "Playfair Display SC", serif;
+      font-weight: 900;
+      font-size: 6rem;
+      color: rgba(0, 0, 10, 0.9);
+      text-transform: uppercase;
+    }
+    .small-header-text {
+      font-family: "Gentium Basic", serif;
+      font-weight: 400;
+      font-style: italic;
+      font-size: 3rem;
+      text-transform: lowercase;
+    }
+    .content__content {
+      text-align: left;
+    }
+    .content__steps > li:before {
+      font-family: 'Playfair Display SC', serif;
+      font-weight: 900;
+      font-size: 1.75rem;
+      text-align: center;
+    }
+    .content__tags,
+    .content__intro1,
+    .content__intro2 > p {
+      font-family: 'Gentium Basic', serif;
+      font-weight: 800;
+      font-size: 0.85rem;
+      text-align: justify;
+    }
+  }
+}
+
+@media (min-width: 60em) {
+  .big-header-text {
+    text-align: center;
+    font-size: 12vw;
+  }
+
+  .small-header-text {
+    text-align: left;
+    font-size: 4.5vw;
   }
 }

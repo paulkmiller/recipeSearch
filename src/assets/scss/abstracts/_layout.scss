@@ -7,6 +7,18 @@
   box-sizing: border-box;
 }
 
+::-webkit-scrollbar {
+  width: .625rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 100);
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(241, 241, 241, 100);
+}
+
 body,
 h1,
 h2,
@@ -71,22 +83,44 @@ picture {
   max-width: 100rem;
   margin-inline: auto;
   padding-inline: 2rem;
+  &__content {
+    max-width: 62.5rem;
+    margin: 0 auto;
+    .content__header {
+      display: flex;
+      align-items: center;
+      min-height: 10rem;
+      margin-bottom: 1rem;
+    }
+  }
 }
 
 .stacked {
   display: grid;
+  > * {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+  }
 }
 
-.stacked > * {
-  grid-column: 1 / 2;
-  grid-row: 1 / 2;
-}
-
-.product-grid {
+.meal-galleryGrid {
   display: grid;
   gap: 1rem;
   // i love grid
   grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+}
+
+.meal-contentGrid {
+  display: grid;
+  grid-template-areas: 
+      "img img intro1 intro2"
+      "img img content content"
+      "steps steps steps steps";
+  grid-template-rows: auto 1fr;
+  grid-gap: 2rem;
+  align-items: flex-start;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .main-title {
