@@ -1,0 +1,173 @@
+.content__intro1 {
+  grid-area: intro1;
+}
+
+.content__intro2 {
+  grid-area: intro2;
+}
+
+.content__content {
+  grid-area: content;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.content__instructions {
+  grid-area: steps;
+  text-align: left;
+}
+
+.content__ingredients {
+  margin-top: 1rem;
+  padding-left: 2rem;
+}
+
+.content__ingredients > li {
+  padding: 0.25rem;
+}
+
+.content__steps {
+  counter-reset: li;
+  margin-top: 1rem;
+  padding-left: 1rem;
+}
+
+.content__steps > li {
+  position: relative;
+  margin: 0 0 0.375rem 2rem;
+  padding: 0.4rem 1.5rem;
+  list-style: none;
+}
+
+.content__steps > li:before {
+  content: counter(li);
+  counter-increment: li;
+  position: absolute;
+  top: -0.3rem;
+  left: -1rem;
+  width: 1rem;
+}
+
+.content__steps > li > ul {
+  list-style: disc;
+  margin-top: 1rem;
+  margin-left: 1rem;
+}
+
+.content__steps > li > ul > li {
+  padding: 0.5rem 0 0.5rem 0;
+}
+
+.content__recipeImg {
+  grid-area: img;
+}
+.content__recipeImg > figure > img {
+  object-fit: cover;
+  height: 37rem;
+  width: 100%;
+  max-height: 100%;
+}
+
+.content__tags,
+.content__intro1,
+.content__intro2 > p {
+  border-top: 3px solid #000;
+  padding-top: 1rem;
+}
+
+.content__tags {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border-top: none;
+  border-bottom: 3px solid #000;
+  border-top: 3px solid #000;
+}
+
+.content__tagsWrap {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.content__tags p + p {
+  text-align: right;
+}
+
+@media (max-width: 800px) {
+  .width-container {
+    width: 100%;
+  }
+
+  .content__header {
+    min-height: 30vw;
+  }
+
+  .meal-contentGrid {
+    display: grid;
+    grid-template-areas:
+      'img img'
+      'intro1 intro2'
+      'content content'
+      'steps steps';
+    grid-template-rows: auto auto auto;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 5vw;
+    align-items: stretch;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  .content__content {
+    height: calc(50% - 35vw);
+    overflow-y: unset;
+    overflow-x: unset;
+  }
+
+  .content__recipeImg > figure > img {
+    width: 100vw;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .content__tags,
+  .content__intro1,
+  .content__intro2 > p {
+    font-size: 0.75rem;
+  }
+}
+
+@media print {
+  body {
+    display: block !important;
+    width: auto !important;
+    float: none !important;
+    position: static !important;
+    overflow: visible !important;
+  }
+
+  .content__recipeImg {
+    display: none;
+  }
+
+  .content__intro1,
+  .content__intro2 > p {
+    border: none;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .content__content {
+    display: block !important;
+    width: auto !important;
+    float: none !important;
+    position: static !important;
+    overflow: visible !important;
+  }
+
+  .meal-contentGrid {
+    display: block !important;
+    width: auto !important;
+    float: none !important;
+    position: static !important;
+    overflow: visible !important;
+  }
+}

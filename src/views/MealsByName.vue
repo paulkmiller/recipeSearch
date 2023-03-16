@@ -15,15 +15,19 @@
       class="card stacked"
       :class="isFeatured ? 'featured' : ''"
     >
-      <router-link :to="{name: 'mealDetails', params: {id: meal.idMeal}}">
+      <router-link :to="{ name: 'mealDetails', params: { id: meal.idMeal } }">
         <img :src="meal.strMealThumb" :alt="meal.strMeal" class="card__img" />
       </router-link>
-        <div class="card__content">
+      <div class="card__content">
         <h2 class="card__title">{{ meal.strMeal }}</h2>
-        <p class="card__category">{{ meal.strCategory }}</p>
-        <a :href="meal.strYoutube" target="_blank">YouTube</a>
-
-        <router-link to="/"> / View</router-link>
+        <a
+          :href="meal.strYoutube"
+          target="_blank"
+          class="youtube"
+          alt="Youtube Icon"
+        >
+          <font-awesome-icon icon="fa-brands fa-youtube" />
+        </a>
       </div>
     </div>
   </div>
@@ -48,5 +52,4 @@ onMounted(() => {
     searchMeals();
   }
 });
-
 </script>

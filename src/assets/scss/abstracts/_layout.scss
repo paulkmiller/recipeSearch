@@ -82,7 +82,7 @@ picture {
 .container {
   max-width: 100rem;
   margin-inline: auto;
-  padding-inline: 2rem;
+  // padding-inline: 2rem;
   &__content {
     max-width: 62.5rem;
     margin: 0 auto;
@@ -107,7 +107,7 @@ picture {
   display: grid;
   gap: 1rem;
   // i love grid
-  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
 }
 
 .meal-contentGrid {
@@ -138,6 +138,21 @@ p.min-content {
   width: min-content;
 }
 
+button {
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  background-color: $msWhite;
+  cursor: pointer;
+  transition: border-color 0.25s;
+  :hover {
+    border-color: $msInfo;
+  }
+  :focus,
+  :focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
+  }
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: $msInfoDark;
@@ -151,50 +166,36 @@ p.min-content {
   }
 }
 
+// @mixin msPrimaryGradient {
+//   background: rgb(196,231,226);
+//   background: radial-gradient(circle, rgba(196,231,226,1) 0%, rgba(166,222,218,1) 100%);
+// }
+
 // ad hoc
 body {
-  margin: 0;
-  background: $msWhite;
-  #app {
-    max-width: 1920px;
-    margin: 0 auto;
-    main.main{
-      display: grid;
-      text-align: center;
-      padding: 0.6em 1.2em;
-      .routerLink{ 
-        margin: 1em;
-        a {
-          display: inline-flex;
-          flex-wrap: wrap;
-          font-size: 1.5em;
-          padding: 5px;
-          transition: background-color 0.25s;
-          &:is(:hover, :focus, :target, :active) {
-            color: $msPrimary;
-          }
-          &:visited {
-            color: $msInfo;
-          }
+  background: $msPrimaryGradient;
+  main.main{
+    display: grid;
+    padding: 1.2em 0;
+    .routerLink{ 
+      margin: 0 0 2em 0;
+      a {
+        display: inline-flex;
+        flex-wrap: wrap;
+        font-size: 1.5em;
+        padding: 5px;
+        transition: background-color 0.25s;
+        &:is(:hover, :focus, :target, :active) {
+          color: $msPrimary;
         }
-        &__lettersContainer{
-          background: $msWhite;
-          border-radius: 5px;
+        &:visited {
+          color: $msInfo;
         }
       }
-    }
-    button {
-      border: 1px solid transparent;
-      padding: 0.6em 1.2em;
-      background-color: $msWhite;
-      cursor: pointer;
-      transition: border-color 0.25s;
-      :hover {
-        border-color: $msInfo;
-      }
-      :focus,
-      :focus-visible {
-        outline: 4px auto -webkit-focus-ring-color;
+      &__lettersContainer{
+        background: $msWhite;
+        border-radius: 5px;
+        text-align: center;
       }
     }
   }

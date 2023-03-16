@@ -1,4 +1,7 @@
-$msPrimary: #41c8c3;
+$msBrand: #14a19c;
+$msPrimary: #a6deda;
+$msPrimaryDark: #41c8c3;
+$msPrimaryLight: #d9e9ea;
 $msSecondary: #002b49;
 $msTertiary: #00848d;
 $msSuccess: #2cc692;
@@ -11,6 +14,23 @@ $msInfoDark: #213547;
 $msGrey: #626b73;
 $msGreyLight: #96a4b0;
 $msGreyDark: #3d4246;
-$msWhite: #f7f7fb;
-$msBlack: #000000;
-$msBrand: #14a19c
+$msWhite: #fffdfa;
+$msCream: #f2ede9;
+$msBlack: #101314;
+
+$msYoutube: #FF0000;
+$msDarkBlue: #4a7588;
+
+$msPrimaryGradient: linear-gradient(
+  0deg, 
+  rgba(196,231,226,1) 0%, 
+  rgba(196,231,226,1) 25%, 
+  rgba(166,222,218,1) 82%
+);
+
+$msPrimaryGradientTest: linear-gradient(
+  0deg,
+  $msPrimaryLight 0%,
+  $msPrimaryLight 25%,
+  $msPrimaryDark 82%
+);

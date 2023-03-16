@@ -1,12 +1,13 @@
 @use "../abstracts/colors" as *;
 
 .card {
-  aspect-ratio: 1 / 1.5;
   &__content {
-    background: $msWhite;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: $msCream;
     align-self: end;
-    margin: 0.5rem 0.5rem 2rem;
-    padding: 0.5rem;
+    padding: 1.5rem;
     box-shadow: 0 0.25rem 1rem rgb(0 0 0 / 0.1);
   }
   &__img {
@@ -15,19 +16,21 @@
     object-fit: cover;
   }
   &__title {
-    font-size: 1.75rem;
+    font-size: 1rem;
     line-height: 1.1;
-    color: $msErrorDark;
+    color: $msGreyDark;
   }
   &__price,
   &__time{
     font-size: 1.25rem;
    }
+  .youtube {
+    color: $msYoutube;
+  }
 }
 
 @media (min-width: 60em) {
   .card {
-    aspect-ratio: 1 / 1.45;
     &__img {
       aspect-ratio: 1 / 1;
     }
@@ -38,7 +41,7 @@
         aspect-ratio: 1 / 1.25;
       }
       .card__title {
-        font-size: 1.75rem;
+        font-size: 1.25rem;
       }
     }
   }

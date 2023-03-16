@@ -1,18 +1,19 @@
 <template>
   <header>
-    <nav class="nav">
+    <nav class="nav container">
       <router-link :to="{name: 'home'}" class="nav__home" >
-        Home
+        Pauly Craig
       </router-link>
       <div class="nav__links">
-        <router-link :to="{name: 'byName'}" class="nav__link">
-          Search Meals
+        <router-link :to="{name: 'byName'}" class="nav__link search">
+          <!-- todo: turn search link into expanding searchbar in nav -->
+          Search
         </router-link>
         <router-link :to="{name: 'byLetter'}" class="nav__link">
-          Meals by Letter
+          By Letter
         </router-link>
         <router-link :to="{name: 'byIngredient'}" class="nav__link">
-          Meals by Ingredients
+          By Ingredient
         </router-link>
       </div>
     </nav>

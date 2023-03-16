@@ -1,11 +1,11 @@
 @use "./colors" as *;
 
-@import url("https://fonts.googleapis.com/css2?family=Gentium+Basic:ital,wght@0,400;0,700;1,400&family=Noto+Sans:wght@400;700&family=Playfair+Display+SC:wght@900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gentium+Basic:ital,wght@0,400;0,700;1,400&family=Raleway&family=Satisfy&family=Playfair+Display+SC:wght@900&display=swap");
 
 :root {
-  --ff-primary: "Noto Sans", sans-serif;
+  --ff-primary: "Raleway", Helvetica, sans-serif;
   --ff-secondary: "Gentium Basic", serif;
-  --ff-accent: Bungee Shade, cursive;
+  --ff-accent: "Satisfy", cursive;
 
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -49,6 +49,18 @@
       font-weight: 500;
       font-family: inherit;
     }
+    .nav {
+      font-family: var(--ff-primary);
+      .nav__home {
+        font-family: var(--ff-accent);
+        font-size: 2.5em;
+        font-weight: 700;
+        color: $msBlack;
+        :hover {
+          color: $msInfo;
+        }
+      }
+    }
     .main-title {
       font-size: clamp(2rem, 5vw + 1rem, 5rem);
       line-height: 1;
@@ -72,7 +84,7 @@
       text-align: left;
     }
     .content__steps > li:before {
-      font-family: 'Playfair Display SC', serif;
+      font-family: "Playfair Display SC", serif;
       font-weight: 900;
       font-size: 1.75rem;
       text-align: center;
@@ -80,9 +92,9 @@
     .content__tags,
     .content__intro1,
     .content__intro2 > p {
-      font-family: 'Gentium Basic', serif;
+      font-family: "Gentium Basic", serif;
       font-weight: 800;
-      font-size: 0.85rem;
+      font-size: 0.9rem;
       text-align: justify;
     }
   }
