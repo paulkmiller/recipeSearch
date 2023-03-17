@@ -86,10 +86,7 @@
 .content__tagsWrap {
   display: flex;
   justify-content: space-evenly;
-}
-
-.content__tags p + p {
-  text-align: right;
+  align-items: center;
 }
 
 @media (max-width: 800px) {

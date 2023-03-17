@@ -3,6 +3,8 @@
 .card {
   &__content {
     display: flex;
+    // todo: revisit this; dislike this hack
+    min-height: 20%;
     justify-content: space-between;
     align-items: center;
     background: $msCream;
@@ -12,20 +14,14 @@
   }
   &__img {
     width: 100%;
-    aspect-ratio: 1 / 1.25;
+    aspect-ratio: 1 / 1;
     object-fit: cover;
   }
-  &__title {
-    font-size: .9rem;
-    line-height: 1.1;
-    color: $msGreyDark;
-  }
-  &__price,
-  &__time{
-    font-size: 1.25rem;
-   }
-  .youtube {
-    color: $msYoutube;
+}
+
+@media(min-width: 40em) {
+  .card__img {
+    aspect-ratio: 1 / 1.25;
   }
 }
 
@@ -37,9 +33,7 @@
     &.featured {
       grid-row: span 2;
       grid-column: span 2;
-      .card__img {
-        aspect-ratio: 1 / 1.25;
-      }
+
       .card__title {
         font-size: 1.25rem;
       }

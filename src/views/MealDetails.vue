@@ -28,22 +28,25 @@
           <section class="content__content">
             <h2>The Ingredients</h2>
             <ul class="content__ingredients">
-              <li>8 oz. spaghetti or linguine pasta</li>
-              <li>
-                2 cups fresh basil leaves, plus 4-8 reserved leaves for garnish
-              </li>
-              <li>2 cloves garlic</li>
-              <li>2 tbsp. pine nuts or blanched almonds</li>
-              <li>1/2 cup olive oil</li>
-              <li>1/2 cup grated Parmesan cheese, plus 2 tbsp. for garnish.</li>
-              <li>1/8 tsp salt</li>
-              <li>1 pint cherry tomatoes</li>
-              <li>1 tsp olive oil</li>
+              <template v-for="(el, ind) of new Array(20)" :key="ind">
+                <li v-if="meal[`strIngredient${ind + 1}`]">
+                  {{ meal['strMeasure' + ind] }}
+                  {{ meal['strIngredient' + ind] }}
+                </li>
+              </template>
             </ul>
             <p class="content__tags">
               <span class="content__tagsWrap">
                 <p>Region: {{ meal.strArea }}</p>
                 <p>Tags: {{ meal.strTags }}</p>
+                <a
+                  :href="meal.strYoutube"
+                  target="_blank"
+                  class="youtube"
+                  alt="Youtube Icon"
+                >
+                  <font-awesome-icon icon="fa-brands fa-youtube" />
+                </a>
               </span>
             </p>
           </section>

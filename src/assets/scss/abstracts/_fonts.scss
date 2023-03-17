@@ -16,6 +16,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
   body {
     font-family: var(--ff-primary);
     font-size: 1rem;
@@ -96,6 +97,30 @@
       font-weight: 800;
       font-size: 0.9rem;
       text-align: justify;
+    }
+    .content__tags p + p {
+      text-align: right;
+    }
+    .content__tags a {
+      color: $msYoutube;
+      font-size: 1.5rem;
+    }
+    .card {
+      &__title {
+        font-size: 1em;
+        color: $msGreyDark;
+      }
+      &__price,
+      &__time{
+        font-size: 1.25rem;
+       }
+       .youtube {
+        color: $msYoutube;
+        font-size: 1.25rem;
+        &:visited{
+          color: $msPrimaryDark;
+        }
+      }
     }
   }
 }
