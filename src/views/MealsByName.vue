@@ -9,27 +9,7 @@
     />
   </div>
   <div class="meal-galleryGrid">
-    <div
-      v-for="meal of meals"
-      :key="meal.idMeal"
-      class="card stacked"
-      :class="isFeatured ? 'featured' : ''"
-    >
-      <router-link :to="{ name: 'mealDetails', params: { id: meal.idMeal } }">
-        <img :src="meal.strMealThumb" :alt="meal.strMeal" class="card__img" />
-      </router-link>
-      <div class="card__content">
-        <h2 class="card__title">{{ meal.strMeal }}</h2>
-        <a
-          :href="meal.strYoutube"
-          target="_blank"
-          class="youtube"
-          alt="Youtube Icon"
-        >
-          <font-awesome-icon icon="fa-brands fa-youtube" />
-        </a>
-      </div>
-    </div>
+    <MealItem v-for="meal of meals" :key="meal.idMeal" :meal="meal" />
   </div>
 </template>
 
@@ -37,6 +17,7 @@
 import { computed, ref, onMounted } from 'vue';
 import { useRoute } from 'vue-router';
 import store from '@/store';
+import MealItem from '@/components/meal__item.vue';
 
 const route = useRoute();
 const search = ref('');

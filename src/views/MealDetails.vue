@@ -28,7 +28,7 @@
           <section class="content__content">
             <h2>The Ingredients</h2>
             <ul class="content__ingredients">
-              <template v-for="(el, ind) of new Array(20)" :key="ind">
+              <template v-for="(ind) of new Array(20)" :key="ind">
                 <li v-if="meal[`strIngredient${ind + 1}`]">
                   {{ meal['strMeasure' + ind] }}
                   {{ meal['strIngredient' + ind] }}
@@ -52,7 +52,13 @@
           </section>
           <section class="content__instructions">
             <h2>The Process</h2>
-            <ol class="content__steps">
+            <!-- output large string as individual li tag split by sentence -->
+             <!-- <ol class="content__steps">
+              <template v-for="(el) of meal.strInstructions.split('.')" :key="el">
+                <li v-if="el">{{ el }}</li>
+              </template>
+            </ol> -->
+            <!--<ol class="content__steps">
               <li>
                 Bring 4 quarts of water to a rolling boil in a large pot. Salt
                 the water generously and add the pasta.
@@ -100,7 +106,7 @@
                 Garnish with reserved basil leaves and Parmesean and serve. Buon
                 Appetito!
               </li>
-            </ol>
+            </ol> -->
           </section>
         </div>
       </main>
