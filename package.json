@@ -1,6 +1,5 @@
 {
-  "name": "vue-meal-search",
-  "private": true,
+  "name": "recipeSearch",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
