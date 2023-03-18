@@ -11,14 +11,15 @@
     />
   </div>
   <div>
-    <a href="#"
-        @click.prevent="openIngredient(ingredient)"
-        v-for="ingredient of computedIngredients"
-        :key="ingredient.idIngredient"
-        class="block bg-white rounded p-3 mb-3 shadow"
-      >
-        <h3 class="text-2xl font-bold mb-2">{{ ingredient.strIngredient }}</h3>
-      </a>
+    <a
+      href="#"
+      @click.prevent="$event => openIngredient(ingredient)"
+      v-for="ingredient of computedIngredients"
+      :key="ingredient.idIngredient"
+      class="block bg-white rounded p-3 mb-3 shadow"
+    >
+      <h3 class="text-2xl font-bold mb-2">{{ ingredient.strIngredient }}</h3>
+    </a>
   </div>
 </template>
 
@@ -50,10 +51,8 @@ function openIngredient(ingredient) {
 }
 
 onMounted(() => {
-  axiosClient
-    .get('/list.php?i=list')
-    .then(({ data }) => {
-      ingredients.value = data.meals;
-    });
+  axiosClient.get('/list.php?i=list').then(({ data }) => {
+    ingredients.value = data.meals;
+  });
 });
 </script>

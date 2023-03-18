@@ -1,6 +1,5 @@
 <template>
   <h1 class="">Meals for {{ ingredient.strIngredient }}</h1>
-
   <Meals :meals="meals" />
 </template>
 

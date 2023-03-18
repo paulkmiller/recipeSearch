@@ -2,6 +2,7 @@
   <div class="meal-galleryGrid">
     <MealItem v-for="meal of meals" :key="meal.idMeal" :meal="meal" />
   </div>
+  <!-- if meals is not null show template -->
   <!-- <div v-if="!meals.length">
     There are no results for your search.
   </div> -->

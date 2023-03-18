@@ -4,7 +4,7 @@ import MealsByLetter from '@/views/MealsByLetter.vue';
 import MealsByName from '@/views/MealsByName.vue';
 import MealDetails from '@/views/MealDetails.vue';
 import DefaultLayout from '@/components/DefaultLayout.vue';
-import Ingredients from '@/views/Ingredients.vue';
+import Ingredients from '@/views/IngredientsPage.vue';
 
 import Home from '../views/HomePage.vue';
 
