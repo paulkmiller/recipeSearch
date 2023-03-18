@@ -11,20 +11,18 @@
     </router-link>
   </div>
 
-  <div class="meal-galleryGrid">
-    <MealItem v-for="meal of meals" :key="meal.idMeal" :meal="meal" />
-  </div>
+  <Meals :meals="meals" />
+
 </template>
 
 <script setup>
 import { computed, onMounted, watch } from 'vue';
 import { useRoute } from 'vue-router';
 import store from '@/store';
-
-import MealItem from '@/components/meal__item.vue';
+import Meals from '@/components/meal__itemLayout.vue';
 
 const route = useRoute();
-const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+const letters = 'ABCDEFGHIJKLMNOPQ RSTUVWXYZ'.split('');
 const meals = computed(() => store.state.mealsByLetter);
 
 watch(route, () => {

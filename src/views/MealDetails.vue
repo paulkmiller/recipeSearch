@@ -53,60 +53,11 @@
           <section class="content__instructions">
             <h2>The Process</h2>
             <!-- output large string as individual li tag split by sentence -->
-             <!-- <ol class="content__steps">
-              <template v-for="(el) of meal.strInstructions.split('.')" :key="el">
+            <ol class="content__steps">
+              <template v-for="(el) of truncateWords(meal.strInstructions)" :key="el">
                 <li v-if="el">{{ el }}</li>
               </template>
-            </ol> -->
-            <!--<ol class="content__steps">
-              <li>
-                Bring 4 quarts of water to a rolling boil in a large pot. Salt
-                the water generously and add the pasta.
-              </li>
-              <li>
-                While the pasta cooks, make the pesto.
-                <ul>
-                  <li>Remove stems from basil leaves.</li>
-                  <li>
-                    Put the basil, garlic, and pine nuts or almonds into the
-                    bowl of a food processor and pulse it a few times to chop
-                    them up.
-                  </li>
-                  <li>
-                    Then, turn the food processor on and
-                    <strong>slowly</strong> pour the olive oil through the
-                    feeder tube to blend with the chopped herbs and nuts.
-                  </li>
-                  <li>
-                    Process until all ingredients are fully blended, stopping
-                    the food processor to scrape down the sides occasionally to
-                    get it all mixed.
-                  </li>
-                  <li>
-                    Turn off the food processor, and add the salt and Parmesean,
-                    then pulse a few times to blend.
-                  </li>
-                </ul>
-              </li>
-              <li>Heat a large skillet over medium heat.</li>
-              <li>Add the 1/2 tsp. olive oil to the heated skillet.</li>
-              <li>
-                Add the cherry tomatoes to the skillet and let them blister,
-                stirring occasionally and gently so they don't burst.
-              </li>
-              <li>Remove tomatoes from the pan and set aside.</li>
-              <li>Drain the pasta, reserving 1/4 cup of the cooking water.</li>
-              <li>Return the pasta to the pot</li>
-              <li>
-                Add the reserved cooking water and pesto to the pasta and stir
-                to mix
-              </li>
-              <li>Plate the pasta and add 6-8 tomatoes to each plate</li>
-              <li>
-                Garnish with reserved basil leaves and Parmesean and serve. Buon
-                Appetito!
-              </li>
-            </ol> -->
+            </ol>
           </section>
         </div>
       </main>
@@ -118,6 +69,7 @@
 import { ref, onMounted } from 'vue';
 import { useRoute } from 'vue-router';
 import axiosClient from '@/axiosClient';
+import { truncateWords } from '../filters';
 
 const route = useRoute();
 const meal = ref({});

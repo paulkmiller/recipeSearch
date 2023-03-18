@@ -8,23 +8,25 @@
       @change="searchMeals"
     />
   </div>
-  <div class="meal-galleryGrid">
-    <MealItem v-for="meal of meals" :key="meal.idMeal" :meal="meal" />
-  </div>
+  <Meals :meals="meals" />
 </template>
 
 <script setup>
 import { computed, ref, onMounted } from 'vue';
 import { useRoute } from 'vue-router';
 import store from '@/store';
-import MealItem from '@/components/meal__item.vue';
+import Meals from '@/components/meal__itemLayout.vue';
 
 const route = useRoute();
 const search = ref('');
 const meals = computed(() => store.state.searchedMeals);
 
 function searchMeals() {
-  store.dispatch('searchMeals', search.value);
+  if (search.value) {
+    store.dispatch('searchMeals', search.value);
+  } else {
+    store.commit('SET_MEALS', []);
+  }
 }
 
 onMounted(() => {

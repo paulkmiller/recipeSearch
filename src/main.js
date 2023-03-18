@@ -5,9 +5,10 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { faYoutube } from '@fortawesome/free-brands-svg-icons';
 
-import store from './store';
 import router from './router';
+import store from './store';
 import App from './App.vue';
+import * as filters from './filters';
 
 import './assets/scss/style.scss';
 
@@ -18,3 +19,7 @@ createApp(App)
   .use(store)
   .component('font-awesome-icon', FontAwesomeIcon)
   .mount('#app');
+
+const app = createApp(App);
+
+app.config.globalProperties.$filters = filters;

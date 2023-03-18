@@ -12,7 +12,7 @@
         <router-link :to="{name: 'byLetter'}" class="nav__link">
           By Letter
         </router-link>
-        <router-link :to="{name: 'byIngredient'}" class="nav__link">
+        <router-link :to="{name: 'ingredients'}" class="nav__link">
           By Ingredient
         </router-link>
       </div>

@@ -7,14 +7,13 @@ export function searchMeals({ commit }, search) {
 }
 
 export function searchMealsByLetter({ commit }, letter) {
-  axiosClient.get(`/search.php?f=${letter}`)
-    .then(({ data }) => {
-      commit('SET_MEALSBYLETTER', data.meals);
-    });
+  axiosClient.get(`/search.php?f=${letter}`).then(({ data }) => {
+    commit('SET_MEALSBYLETTER', data.meals);
+  });
 }
 
-export function searchMealsByIngredeient({ commit }, ing) {
+export function searchMealsByIngredient({ commit }, ing) {
   axiosClient.get(`/filter.php?i=${ing}`).then(({ data }) => {
-    commit('SET_MEALSBYINGREDIENTS', data.meals);
+    commit('SET_MEALSBYINGREDIENT', data.meals);
   });
 }

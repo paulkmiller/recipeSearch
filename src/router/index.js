@@ -4,6 +4,7 @@ import MealsByLetter from '@/views/MealsByLetter.vue';
 import MealsByName from '@/views/MealsByName.vue';
 import MealDetails from '@/views/MealDetails.vue';
 import DefaultLayout from '@/components/DefaultLayout.vue';
+import Ingredients from '@/views/Ingredients.vue';
 
 import Home from '../views/HomePage.vue';
 
@@ -30,7 +31,12 @@ export default createRouter({
           component: MealsByLetter,
         },
         {
-          path: '/ingredient/:ingredient?',
+          path: '/ingredients',
+          name: 'ingredients',
+          component: Ingredients,
+        },
+        {
+          path: '/ingredient/:ingredient',
           name: 'byIngredient',
           component: MealsByIngredient,
         },

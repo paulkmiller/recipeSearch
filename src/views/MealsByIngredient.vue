@@ -1,21 +1,20 @@
 <template>
-  <div>
-   By Ingredients
-  </div>
+  <h1 class="">Meals for {{ ingredient.strIngredient }}</h1>
+
+  <Meals :meals="meals" />
 </template>
 
 <script setup>
+import { onMounted, computed } from 'vue';
+import { useRoute } from 'vue-router';
+import store from '@/store';
+import Meals from '@/components/meal__itemLayout.vue';
 
-import { onMounted } from 'vue';
-import axiosClient from '@/axiosClient';
+const route = useRoute();
+const ingredient = computed(() => store.state.ingredient);
+const meals = computed(() => store.state.mealsByIngredient);
 
 onMounted(() => {
-  axiosClient.get('https://www.themealdb.com/api/json/v1/1/list.php?i=list')
-    .then((response) => {
-      console.log(response);
-    })
-    .catch((error) => {
-      console.log(error);
-    });
+  store.dispatch('searchMealsByIngredient', route.params.ingredient);
 });
 </script>
