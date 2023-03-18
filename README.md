@@ -9,8 +9,7 @@ I used [MidJourney AI](https://www.midjourney.com/) to generate designs that I u
   * Add primary content / hero box to grid
   * Add footer box to grid
   * Add better "Search Not Found" content
-  * Fonts pass
-  * Styling pass
+  * Fonts / Styling pass
   ---
 ### __Fast-Follow__
   * Create nav__mobile.vue
