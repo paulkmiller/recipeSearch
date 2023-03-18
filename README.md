@@ -19,6 +19,7 @@ I used [MidJourney AI](https://www.midjourney.com/) to generate designs that I u
   * ADA compliance refactoring
   ---
 ### __Long Term__
+  * API refactor / switch to [Edamam API](https://www.edamam.com/)
   * Add login / oauth
   * Allow users to create account
   * Allow users to save recipes
