@@ -1,9 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import MealsByIngredient from '@/views/MealsByIngredient.vue';
-import MealsByLetter from '@/views/MealsByLetter.vue';
-import MealsByName from '@/views/MealsByName.vue';
-import MealDetails from '@/views/MealDetails.vue';
-import DefaultLayout from '@/components/DefaultLayout.vue';
+import RecipesByIngredient from '@/views/RecipesByIngredient.vue';
+import RecipesByLetter from '@/views/RecipesByLetter.vue';
+import RecipesByName from '@/views/RecipesByName.vue';
+import RecipeDetails from '@/views/RecipeDetails.vue';
+import DefaultLayout from '@/components/layout__default.vue';
 import Ingredients from '@/views/IngredientsPage.vue';
 
 import Home from '../views/HomePage.vue';
@@ -23,12 +23,12 @@ export default createRouter({
         {
           path: '/name/:name?',
           name: 'byName',
-          component: MealsByName,
+          component: RecipesByName,
         },
         {
           path: '/letter/:letter?',
           name: 'byLetter',
-          component: MealsByLetter,
+          component: RecipesByLetter,
         },
         {
           path: '/ingredients',
@@ -38,12 +38,12 @@ export default createRouter({
         {
           path: '/ingredient/:ingredient',
           name: 'byIngredient',
-          component: MealsByIngredient,
+          component: RecipesByIngredient,
         },
         {
-          path: '/meal/:id',
-          name: 'mealDetails',
-          component: MealDetails,
+          path: '/recipe/:id',
+          name: 'recipeDetails',
+          component: RecipeDetails,
         },
       ],
     },

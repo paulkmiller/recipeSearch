@@ -1,38 +1,38 @@
 <template>
-  <div class="routerLink" id="search__MealsByName">
+  <div class="routerLink" id="search__RecipesByName">
     <input
       type="text"
       class="search"
       v-model="search"
-      placeholder="Search for a meal"
-      @change="searchMeals"
+      placeholder="Search for a recipe"
+      @change="searchRecipes"
     />
   </div>
-  <Meals :meals="meals" />
+  <RecipeGallery :recipes="recipes" />
 </template>
 
 <script setup>
 import { computed, ref, onMounted } from 'vue';
 import { useRoute } from 'vue-router';
 import store from '@/store';
-import Meals from '@/components/meal__itemLayout.vue';
+import RecipeGallery from '@/components/card__gallery.vue';
 
 const route = useRoute();
 const search = ref('');
-const meals = computed(() => store.state.searchedMeals);
+const recipes = computed(() => store.state.recipesSearched);
 
-function searchMeals() {
+function searchRecipes() {
   if (search.value) {
-    store.dispatch('searchMeals', search.value);
+    store.dispatch('searchRecipes', search.value);
   } else {
-    store.commit('SET_MEALS', []);
+    store.commit('SET_RECIPES', []);
   }
 }
 
 onMounted(() => {
   search.value = route.params.name;
   if (search.value) {
-    searchMeals();
+    searchRecipes();
   }
 });
 </script>

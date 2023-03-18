@@ -1,13 +1,13 @@
-export function SET_MEALS(state, meals) {
-  state.searchedMeals = meals || [];
+export function SET_RECIPES(state, recipes) {
+  state.recipesSearched = recipes || [];
 }
 
-export function SET_MEALSBYLETTER(state, meals) {
-  state.mealsByLetter = meals || [];
+export function SET_RECIPESBYLETTER(state, recipes) {
+  state.recipesByLetter = recipes || [];
 }
 
-export function SET_MEALSBYINGREDIENT(state, meals) {
-  state.mealsByIngredient = meals || [];
+export function SET_RECIPESBYINGREDIENT(state, recipes) {
+  state.recipesByIngredient = recipes || [];
 }
 
 export function SET_INGREDIENT(state, ingredient) {

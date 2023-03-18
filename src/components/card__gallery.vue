@@ -1,0 +1,21 @@
+<template>
+  <div class="meal-galleryGrid">
+    <RecipeCard v-for="recipe of recipes" :key="recipe.idMeal" :recipe="recipe" />
+  </div>
+  <div v-if="recipes">
+    <div v-if="!recipes.length">
+      There are no results for your search.
+    </div>
+  </div>
+</template>
+
+<script setup>
+import RecipeCard from '@/components/card__recipe.vue';
+
+const { recipes } = defineProps({
+  recipes: {
+    required: true,
+    type: Array,
+  },
+});
+</script>

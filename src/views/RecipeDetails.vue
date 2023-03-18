@@ -4,13 +4,13 @@
       <main>
         <div class="content__header">
           <header>
-            <h1 class="big-header-text">{{ meal.strMeal }}</h1>
+            <h1 class="big-header-text">{{ recipe.strMeal }}</h1>
           </header>
         </div>
         <div class="meal-contentGrid">
           <aside class="content__recipeImg">
             <figure>
-              <img :src="meal.strMealThumb" :alt="meal.strMeal" />
+              <img :src="recipe.strMealThumb" :alt="recipe.strMeal" />
             </figure>
           </aside>
           <section class="content__intro1">
@@ -29,18 +29,18 @@
             <h2>The Ingredients</h2>
             <ul class="content__ingredients">
               <template v-for="(ind) of new Array(20)" :key="ind">
-                <li v-if="meal[`strIngredient${ind + 1}`]">
-                  {{ meal['strMeasure' + ind] }}
-                  {{ meal['strIngredient' + ind] }}
+                <li v-if="recipe[`strIngredient${ind + 1}`]">
+                  {{ recipe['strMeasure' + ind] }}
+                  {{ recipe['strIngredient' + ind] }}
                 </li>
               </template>
             </ul>
             <p class="content__tags">
               <span class="content__tagsWrap">
-                <p>Region: {{ meal.strArea }}</p>
-                <p>Tags: {{ meal.strTags }}</p>
+                <p>Region: {{ recipe.strArea }}</p>
+                <p>Tags: {{ recipe.strTags }}</p>
                 <a
-                  :href="meal.strYoutube"
+                  :href="recipe.strYoutube"
                   target="_blank"
                   class="youtube"
                   alt="Youtube Icon"
@@ -54,7 +54,7 @@
             <h2>The Process</h2>
             <!-- output large string as individual li tag split by sentence -->
             <ol class="content__steps">
-              <template v-for="(el) of truncateWords(meal.strInstructions)" :key="el">
+              <template v-for="(el) of truncateWords(recipe.strInstructions)" :key="el">
                 <li v-if="el">{{ el }}</li>
               </template>
             </ol>
@@ -72,10 +72,10 @@ import axiosClient from '@/axiosClient';
 import { truncateWords } from '../filters';
 
 const route = useRoute();
-const meal = ref({});
+const recipe = ref({});
 
 onMounted(async () => {
   const response = await axiosClient.get(`/lookup.php?i=${route.params.id}`);
-  meal.value = response.data.meals[0] || {};
+  recipe.value = response.data.meals[0] || {};
 });
 </script>

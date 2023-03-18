@@ -11,7 +11,7 @@
     </router-link>
   </div>
 
-  <Meals :meals="meals" />
+  <RecipeGallery :recipes="recipes" />
 
 </template>
 
@@ -19,18 +19,18 @@
 import { computed, onMounted, watch } from 'vue';
 import { useRoute } from 'vue-router';
 import store from '@/store';
-import Meals from '@/components/meal__itemLayout.vue';
+import RecipeGallery from '@/components/card__gallery.vue';
 
 const route = useRoute();
 const letters = 'ABCDEFGHIJKLMNOPQ RSTUVWXYZ'.split('');
-const meals = computed(() => store.state.mealsByLetter);
+const recipes = computed(() => store.state.recipesByLetter);
 
 watch(route, () => {
-  store.dispatch('searchMealsByLetter', route.params.letter);
+  store.dispatch('searchRecipesByLetter', route.params.letter);
 });
 
 onMounted(() => {
-  store.dispatch('searchMealsByLetter', route.params.letter);
+  store.dispatch('searchRecipesByLetter', route.params.letter);
 });
 
 </script>
