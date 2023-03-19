@@ -105,13 +105,13 @@ picture {
   }
 }
 
-.meal-galleryGrid {
+.recipe-galleryGrid {
   display: grid;
   gap: 3rem;
   grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
 }
 
-.meal-contentGrid {
+.recipe-contentGrid {
   display: grid;
   grid-template-areas: 
       "img img intro1 intro2"
@@ -168,7 +168,7 @@ button {
 }
 
 @media (min-width: 56em){
-  .meal-galleryGrid {
+  .recipe-galleryGrid {
     grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
   }  
 }

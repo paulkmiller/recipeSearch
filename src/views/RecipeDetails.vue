@@ -7,7 +7,7 @@
             <h1 class="big-header-text">{{ recipe.strMeal }}</h1>
           </header>
         </div>
-        <div class="meal-contentGrid">
+        <div class="recipe-contentGrid">
           <aside class="content__recipeImg">
             <figure>
               <img :src="recipe.strMealThumb" :alt="recipe.strMeal" />

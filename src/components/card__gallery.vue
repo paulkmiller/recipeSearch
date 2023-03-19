@@ -1,5 +1,5 @@
 <template>
-  <div class="meal-galleryGrid">
+  <div class="recipe-galleryGrid">
     <RecipeCard v-for="recipe of recipes" :key="recipe.idMeal" :recipe="recipe" />
   </div>
   <div v-if="recipes">
