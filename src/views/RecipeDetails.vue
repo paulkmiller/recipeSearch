@@ -54,7 +54,7 @@
             <h2>The Process</h2>
             <!-- output large string as individual li tag split by sentence -->
             <ol class="content__steps">
-              <template v-for="(el) of truncateWords(recipe.strInstructions)" :key="el">
+              <template v-for="(el) of splitByPeriod(recipe.strInstructions)" :key="el">
                 <li v-if="el">{{ el }}</li>
               </template>
             </ol>
@@ -68,14 +68,14 @@
 <script setup>
 import { ref, onMounted } from 'vue';
 import { useRoute } from 'vue-router';
-import axiosClient from '@/axiosClient';
-import { truncateWords } from '../filters';
+import mealDB from '@/axiosClient';
+import { splitByPeriod } from '../filters';
 
 const route = useRoute();
 const recipe = ref({});
 
 onMounted(async () => {
-  const response = await axiosClient.get(`/lookup.php?i=${route.params.id}`);
+  const response = await mealDB.get(`/lookup.php?i=${route.params.id}`);
   recipe.value = response.data.meals[0] || {};
 });
 </script>

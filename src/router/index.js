@@ -47,11 +47,5 @@ export default createRouter({
         },
       ],
     },
-
-    // import the About component and add a route for it
-    // {
-    //   path: '/about',
-    //   component: () => import('@/views/About.vue'),
-    // },
   ],
 });

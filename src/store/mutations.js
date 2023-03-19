@@ -13,3 +13,7 @@ export function SET_RECIPESBYINGREDIENT(state, recipes) {
 export function SET_INGREDIENT(state, ingredient) {
   state.ingredient = ingredient;
 }
+
+export function SET_INGREDIENTIMAGE(state, ingredientImage) {
+  state.ingredientImage = ingredientImage;
+}
