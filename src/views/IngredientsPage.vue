@@ -8,9 +8,10 @@
       class="search"
       v-model="search"
       placeholder="Search for an ingredient"
+      @input="$event => searchImages(search)"
     />
   </div>
-  <div>
+  <div class="list__container">
     <a
       href="#"
       @click.prevent="($event) => openIngredient(ingredient)"
@@ -19,131 +20,59 @@
       class="block bg-white rounded p-3 mb-3 shadow"
     >
       <h3 class="text-2xl font-bold mb-2">{{ ingredient.strIngredient }}</h3>
-      <!-- <img :src="searchImages()" alt="ingredient" /> -->
     </a>
+  </div>
+  <div class="img_container">
+    <img :src="recipe.strMealThumb" alt="">
   </div>
 </template>
 
-<script>
-import { onMounted, ref, computed } from 'vue';
+<script setup>
+import { onMounted, ref, computed, watch } from 'vue';
 import { useRouter } from 'vue-router';
-import mealDB from '@/axiosClient';
+import debounce from 'lodash.debounce';
 
-// import mealDBImage from '@/axiosClient2';
+import mealDB from '@/axiosClient';
 import store from '@/store';
 
 const router = useRouter();
 const search = ref('');
 const ingredients = ref([]);
-const computedIngredients = [];
+const ingredientImages = ref([]);
 
-export default {
-  data() {
-    return {
-      search: '',
-      awaitingSearch: false,
-    };
-  },
-  computed: {
-    computedIngredients() {
-      // eslint-disable-next-line vue/no-ref-as-operand
-      if (!computedIngredients) return ingredients;
+const computedIngredients = computed(() => {
+  // eslint-disable-next-line vue/no-ref-as-operand
+  if (!computedIngredients) return ingredients;
 
-      return ingredients.value.filter((i) =>
-        i.strIngredient.toLowerCase().includes(search.value.toLowerCase())
-      );
-    },
-  },
-  methods: {
-    openIngredient(ingredient) {
-      store.commit('SET_INGREDIENT', ingredient);
-      router.push({
-        name: 'byIngredient',
-        params: { ingredient: ingredient.strIngredient },
-      });
-    },
-    // isTyping(value) {
-    //   if (!value) {
-    //     this.searchImages(this.searchImages);
-    //   }
-    // },
-    // searchImages(searchQuery) {
-    //   this.isLoading = true;
+  return ingredients.value.filter((i) =>
+    i.strIngredient.toLowerCase().includes(search.value.toLowerCase())
+  );
+});
 
-    //   if (searchQuery.value) {
-    //     store.dispatch('returnIngredientImage', searchQuery.value);
-    //   } else {
-    //     store.commit('SET_INGREDIENTIMAGE', []);
-    //   }
-    //   this.loading = false;
-    // },
-  },
-  watch: {
-    // search: function (val) {
-    //   if (!this.awaitingSearch) {
-    //     setTimeout(() => {
-    //       this.fetchResults({ query: this.search });
-    //       this.awaitingSearch = false;
-    //     }, 1000); // 1 sec delay
-    //   }
-    //   this.awaitingSearch = true;
-    // },
-  },
-  setup() {
-    onMounted(async () => {
-      await mealDB.get('/list.php?i=list').then(({ data }) => {
-        ingredients.value = data.meals;
-      });
+function openIngredient(ingredient) {
+  store.commit('SET_INGREDIENT', ingredient);
+  router.push({
+    name: 'byIngredient',
+    params: { ingredient: ingredient.strIngredient },
+  });
+}
 
-      // if (search.value) {
-      //   searchImages(search.value);
-      // }
-    });
-  },
-};
+function searchImages(searchQuery) {
+  if (searchQuery.value) {
+    console.log(searchQuery.value);
+    store.dispatch('returnIngredientImage', searchQuery.value);
+  } else {
+    store.commit('SET_INGREDIENTIMAGE', []);
+  }
+}
 
-// const computedIngredients = computed(() => {
-//   // eslint-disable-next-line vue/no-ref-as-operand
-//   if (!computedIngredients) return ingredients;
+onMounted(async () => {
+  await mealDB.get('/list.php?i=list').then(({ data }) => {
+    ingredients.value = data.meals;
+  });
 
-//   return ingredients.value.filter((i) =>
-//     i.strIngredient.toLowerCase().includes(search.value.toLowerCase())
-//   );
-// });
-
-// function openIngredient(ingredient) {
-//   store.commit('SET_INGREDIENT', ingredient);
-//   router.push({
-//     name: 'byIngredient',
-//     params: { ingredient: ingredient.strIngredient },
-//   });
-// }
-
-// function isTyping(value) {
-//   if (!value) {
-//     this.searchImages(this.searchImages);
-//   }
-// }
-
-// function searchImages(searchQuery) {
-//   this.isLoading = true;
-
-//   if (searchQuery.value) {
-//     store.dispatch('returnIngredientImage', searchQuery.value);
-//   } else {
-//     store.commit('SET_INGREDIENTIMAGE', []);
-//   }
-
-//   this.loading = false;
-// }
-
-// onMounted(async () => {
-//   await mealDB.get('/list.php?i=list').then(({ data }) => {
-//     ingredients.value = data.meals;
-//   });
-
-//   if (search.value) {
-//     searchImages(search.value);
-//   }
-// });
+  watch(search, debounce(() => {
+    console.log(ingredientImages);
+  }, 500));
+});
 </script>
