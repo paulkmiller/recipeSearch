@@ -9,6 +9,8 @@ I used [MidJourney AI](https://www.midjourney.com/) to generate designs that I u
   * Add primary content / hero box to grid
   * Add footer box to grid
   * Add better "Search Not Found" content
+  * Flesh out Ingredients view
+  * Flesh out Letter view
   * Fonts / Styling pass
   ---
 ### __Fast-Follow__
@@ -19,7 +21,7 @@ I used [MidJourney AI](https://www.midjourney.com/) to generate designs that I u
   * ADA compliance refactoring
   ---
 ### __Long Term__
-  * API refactor / switch to [Edamam API](https://www.edamam.com/)
+  * Switch to [Edamam API](https://www.edamam.com/)
   * Add login / oauth
   * Allow users to create account
   * Allow users to save recipes

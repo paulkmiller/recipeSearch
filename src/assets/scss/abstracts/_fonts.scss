@@ -1,10 +1,11 @@
 @use "./colors" as *;
 
-@import url("https://fonts.googleapis.com/css2?family=Gentium+Basic:ital,wght@0,400;0,700;1,400&family=Raleway&family=Satisfy&family=Playfair+Display+SC:wght@900&display=swap");
+//todo - remove unnecessary fonts
+@import url('https://fonts.googleapis.com/css2?family=Gentium+Book+Basic:wght@400;700&family=Maven+Pro:wght@400;500;700&family=Playfair+Display+SC:wght@900&family=Raleway:wght@400;500;700&family=Satisfy&display=swap');
 
 :root {
   --ff-primary: "Raleway", Helvetica, sans-serif;
-  --ff-secondary: "Gentium Basic", serif;
+  --ff-secondary: "Gentium Book Basic", serif;
   --ff-accent: "Satisfy", cursive;
 
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -45,6 +46,9 @@
         color: $msInfo;
       }
     }
+    input {
+      font-family: var(--ff-primary);
+    }
     button {
       font-size: 1em;
       font-weight: 500;
@@ -75,7 +79,7 @@
       text-transform: uppercase;
     }
     .small-header-text {
-      font-family: "Gentium Basic", serif;
+      font-family: var(--ff-secondary);
       font-weight: 400;
       font-style: italic;
       font-size: 3rem;
@@ -93,7 +97,7 @@
     .content__tags,
     .content__intro1,
     .content__intro2 > p {
-      font-family: "Gentium Basic", serif;
+      font-family: var(--ff-secondary);
       font-weight: 800;
       font-size: 0.9rem;
       text-align: justify;
@@ -107,7 +111,9 @@
     }
     .card {
       &__title {
-        font-size: 1em;
+        font-family: 'Maven Pro', sans-serif;
+        font-size: .95em;
+        letter-spacing: -.25px;
         color: $msGreyDark;
       }
       &__price,

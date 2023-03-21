@@ -1,29 +1,56 @@
 <template>
-  <div>
-    <h1>Ingredients</h1>
-  </div>
-  <div>
-    <input
-      type="text"
-      class="search"
-      v-model="search"
-      placeholder="Search for an ingredient"
-      @input="$event => searchImages(search)"
-    />
-  </div>
-  <div class="list__container">
-    <a
-      href="#"
-      @click.prevent="($event) => openIngredient(ingredient)"
-      v-for="ingredient of computedIngredients"
-      :key="ingredient.idIngredient"
-      class="block bg-white rounded p-3 mb-3 shadow"
-    >
-      <h3 class="text-2xl font-bold mb-2">{{ ingredient.strIngredient }}</h3>
-    </a>
-  </div>
-  <div class="img_container">
-    <img :src="recipe.strMealThumb" alt="">
+  <div class="container ingredients__container">
+    <aside class="ingredients__aside">
+      <div class="ingredients__title">
+        <h1>Ingredients</h1>
+      </div>
+      <div>
+        <input
+          type="text"
+          class="ingredients__search"
+          v-model="search"
+          placeholder="Search for an ingredient..."
+        />
+        <a
+          href="#"
+          @click.prevent="($event) => openIngredient(ingredient)"
+          v-for="ingredient of computedIngredients"
+          :key="ingredient.idIngredient"
+          class="ingredients__links"
+        >
+          <ul>
+            <li>
+              {{ ingredient.strIngredient }}
+            </li>
+          </ul>
+        </a>
+      </div>
+    </aside>
+    <section>
+      <div class="ingredients__content">
+        <div
+          v-for="(item, index) in computedIngredientsSingle"
+          :key="index"
+          class="ingredients__details"
+        >
+          <figure class="ingredients__detailsImg">
+            <img src="https://picsum.photos/800/600" />
+            <figcaption>Pictured: A {{ item.strIngredient }}</figcaption>
+          </figure>
+          <div class="ingredients__detailsText">
+            <h2>{{ item.strIngredient }}</h2>
+            <p v-if="!item.strDescription" class="ingredients__detailsDescription">
+              lorem ipsum dolar sit amet, consectetur adipiscing elit. Morbi
+              cursus nunc sit amet lorem rhoncus consectetur. Lorem ipsum dolor
+              sit amet, consectetur adipiscing elit. Morbi cursus nunc sit amet
+            </p>
+            <p>
+              {{ item.strDescription }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 
@@ -47,6 +74,14 @@ const computedIngredients = computed(() => {
   return ingredients.value.filter((i) =>
     i.strIngredient.toLowerCase().includes(search.value.toLowerCase())
   );
+});
+
+const computedIngredientsSingle = computed(() => {
+  // todo: there must be a better way to do this
+  const results = ingredients.value.filter((i) =>
+    i.strIngredient.toLowerCase().includes(search.value.toLowerCase())
+  );
+  return results.slice(0, 1);
 });
 
 function openIngredient(ingredient) {

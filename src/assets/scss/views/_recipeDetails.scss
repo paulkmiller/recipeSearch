@@ -98,7 +98,7 @@
     min-height: 30vw;
   }
 
-  .meal-contentGrid {
+  .recipe-contentGrid {
     display: grid;
     grid-template-areas:
       'img img'
@@ -160,7 +160,7 @@
     overflow: visible !important;
   }
 
-  .meal-contentGrid {
+  .recipe-contentGrid {
     display: block !important;
     width: auto !important;
     float: none !important;
