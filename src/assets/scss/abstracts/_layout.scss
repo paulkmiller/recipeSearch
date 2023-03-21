@@ -88,8 +88,46 @@ picture {
     .content__header {
       display: flex;
       align-items: center;
+      justify-content: center;
       min-height: 10rem;
       margin-bottom: 1rem;
+    }
+  }
+  &.ingredients__container {
+    display: grid;
+    grid-template-areas: 
+      "nav section";
+    grid-template-columns: 33% 1fr;
+    width: 100%;
+    height: 100vh;
+    .ingredients {
+      &__aside {
+        background: $msCreamLight;
+        overflow-y: auto;
+        overflow-x: hidden;
+        padding: 1rem;
+      }
+      &__search {
+        margin: 1rem 0;
+      }
+      &__links ul {
+        list-style-type: none;
+        padding: 0 0.25rem;
+        margin: 0.5rem 0;
+        li {
+          font-family: var(--ff-primary)
+        }
+      }
+      &__detailsImg {
+        img {
+          max-height: 310px;
+          width: 100%;
+          object-fit: cover;
+        }
+        figcaption {
+          padding: 0.5rem 2rem 0;
+        }
+      }
     }
   }
 }
@@ -159,10 +197,24 @@ button {
   }
 }
 
+@media(min-width: 30em) {
+
+}
+
 @media (min-width: 56em){
   .recipe-galleryGrid {
     grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
   }  
+}
+
+@media(min-width: 60em){
+  .ingredients__container {
+    .ingredients {
+      &__aside {
+        padding: 2rem 3rem;
+      }
+    }
+  }
 }
 
 // ad hoc
