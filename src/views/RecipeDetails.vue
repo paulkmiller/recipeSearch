@@ -28,10 +28,10 @@
           <section class="content__content">
             <h2>The Ingredients</h2>
             <ul class="content__ingredients">
-              <template v-for="(ind) of new Array(20)" :key="ind">
-                <li v-if="recipe[`strIngredient${ind + 1}`]">
-                  {{ recipe['strMeasure' + ind] }}
-                  {{ recipe['strIngredient' + ind] }}
+              <template v-for="(el, index) of new Array(20)" :key="el">
+                <li v-if="recipe[`strIngredient${index}`]">
+                  {{ recipe['strMeasure' + index] }}
+                  {{ recipe['strIngredient' + index] }}
                 </li>
               </template>
             </ul>
@@ -75,6 +75,8 @@ const route = useRoute();
 const recipe = ref({});
 
 onMounted(async () => {
+  console.log(recipe);
+
   const response = await mealDB.get(`/lookup.php?i=${route.params.id}`);
   recipe.value = response.data.meals[0] || {};
 });

@@ -33,13 +33,23 @@
           :key="index"
           class="ingredients__details"
         >
-          <figure class="ingredients__detailsImg">
-            <img src="https://picsum.photos/800/600" />
-            <figcaption>Pictured: A {{ item.strIngredient }}</figcaption>
-          </figure>
+          <div v-if="render">
+            <IngredientsImage :ingredient="computedIngredientsImage" />
+          </div>
+          <div v-else>
+            <img
+              src="https://via.placeholder.com/150"
+              alt="placeholder"
+              class="ingredients__detailsImg"
+            />
+          </div>
+
           <div class="ingredients__detailsText">
             <h2>{{ item.strIngredient }}</h2>
-            <p v-if="!item.strDescription" class="ingredients__detailsDescription">
+            <p
+              v-if="!item.strDescription"
+              class="ingredients__detailsDescription"
+            >
               lorem ipsum dolar sit amet, consectetur adipiscing elit. Morbi
               cursus nunc sit amet lorem rhoncus consectetur. Lorem ipsum dolor
               sit amet, consectetur adipiscing elit. Morbi cursus nunc sit amet
@@ -55,9 +65,9 @@
 </template>
 
 <script setup>
-import { onMounted, ref, computed, watch } from 'vue';
+import { onMounted, ref, computed, watch, watchEffect } from 'vue';
 import { useRouter } from 'vue-router';
-import debounce from 'lodash.debounce';
+import IngredientsImage from '@/components/ingredients__image.vue';
 
 import mealDB from '@/axiosClient';
 import store from '@/store';
@@ -65,7 +75,15 @@ import store from '@/store';
 const router = useRouter();
 const search = ref('');
 const ingredients = ref([]);
-const ingredientImages = ref([]);
+const render = ref(true);
+
+watchEffect(() => {
+  if (ingredients.value) {
+    render.value = true;
+  } else {
+    render.value = false;
+  }
+});
 
 const computedIngredients = computed(() => {
   // eslint-disable-next-line vue/no-ref-as-operand
@@ -77,11 +95,20 @@ const computedIngredients = computed(() => {
 });
 
 const computedIngredientsSingle = computed(() => {
-  // todo: there must be a better way to do this
+  if (!computedIngredientsSingle) return ingredients;
+
   const results = ingredients.value.filter((i) =>
-    i.strIngredient.toLowerCase().includes(search.value.toLowerCase())
-  );
+    i.strIngredient.toLowerCase().includes(search.value.toLowerCase()));
   return results.slice(0, 1);
+});
+
+const computedIngredientsImage = computed(() => {
+  if (!computedIngredientsImage) return ingredients;
+
+  const results = ingredients.value.filter((i) =>
+    i.strIngredient.toLowerCase().includes(search.value.toLowerCase()));
+  
+    return results[0].strIngredient;
 });
 
 function openIngredient(ingredient) {
@@ -92,22 +119,9 @@ function openIngredient(ingredient) {
   });
 }
 
-function searchImages(searchQuery) {
-  if (searchQuery.value) {
-    console.log(searchQuery.value);
-    store.dispatch('returnIngredientImage', searchQuery.value);
-  } else {
-    store.commit('SET_INGREDIENTIMAGE', []);
-  }
-}
-
 onMounted(async () => {
   await mealDB.get('/list.php?i=list').then(({ data }) => {
     ingredients.value = data.meals;
   });
-
-  watch(search, debounce(() => {
-    console.log(ingredientImages);
-  }, 500));
 });
 </script>

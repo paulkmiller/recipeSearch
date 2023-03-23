@@ -18,7 +18,7 @@
 </template>
 
 <script setup>
-const { recipe } = defineProps({
+defineProps({
   recipe: {
     type: Object,
     required: true,

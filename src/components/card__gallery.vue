@@ -12,7 +12,7 @@
 <script setup>
 import RecipeCard from '@/components/card__recipe.vue';
 
-const { recipes } = defineProps({
+defineProps({
   recipes: {
     required: true,
     type: Array,

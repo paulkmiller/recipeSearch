@@ -1,5 +1,4 @@
 import mealDB from '@/axiosClient';
-import mealDBImage from '@/axiosClient2';
 
 export function searchRecipes({ commit }, search) {
   mealDB.get(`/search.php?s=${search}`).then(({ data }) => {
@@ -16,11 +15,5 @@ export function searchRecipesByLetter({ commit }, letter) {
 export function searchRecipesByIngredient({ commit }, ing) {
   mealDB.get(`/filter.php?i=${ing}`).then(({ data }) => {
     commit('SET_RECIPESBYINGREDIENT', data.meals);
-  });
-}
-
-export function returnIngredientImage({ commit }, ing) {
-  mealDBImage.get(`/${ing}.png`).then(({ data }) => {
-    commit('SET_INGREDIENTIMAGE', data.meals);
   });
 }

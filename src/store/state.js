@@ -3,5 +3,4 @@ export default {
   recipesByLetter: [],
   recipesbyIngredient: [],
   ingredient: {},
-  ingredientImage: {},
 };
