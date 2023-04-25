@@ -69,7 +69,7 @@
 import { ref, onMounted } from 'vue';
 import { useRoute } from 'vue-router';
 import mealDB from '@/axiosClient';
-import { splitByPeriod } from '../filters';
+import { splitByPeriod } from '@/filters';
 
 const route = useRoute();
 const recipe = ref({});

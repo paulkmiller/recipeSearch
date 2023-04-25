@@ -7,7 +7,7 @@ nav.nav{
   min-height: 64px;
   height: 100%;
   align-items: stretch;
-  border-bottom: 2px solid $msDarkBlue;
+  border-bottom: 2px solid $rsDarkBlue;
   .nav__home,
   .nav__link {
     display: inline-flex;
@@ -16,7 +16,7 @@ nav.nav{
     cursor: pointer;
     transition: color 0.25s;
     &:hover {
-      color: $msWhite;
+      color: $rsWhite;
     }
   }
   .nav__home{
@@ -43,7 +43,7 @@ nav.nav{
       padding-right: .75em;;
       &::after{
         content: "";
-        background: $msBlack;
+        background: $rsBlack;
         width: 2px;
         height: 25px;
         position: absolute;

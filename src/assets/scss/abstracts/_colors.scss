@@ -1,37 +1,38 @@
-$msBrand: #14a19c;
-$msPrimary: #a6deda;
-$msPrimaryDark: #41c8c3;
-$msPrimaryLight: #d9e9ea;
-$msSecondary: #002b49;
-$msTertiary: #00848d;
-$msSuccess: #2cc692;
-$msWarning: #ffa800;
-$msError: #e54852;
-$msErrorDark: firebrick;
-$msInfo: #4373c7;
-$msInfoLight: #747bff;
-$msInfoDark: #213547;
-$msGrey: #626b73;
-$msGreyLight: #96a4b0;
-$msGreyDark: #3d4246;
-$msWhite: #fffdfa;
-$msCream: #f2ede9;
-$msCreamLight: #fbf8f5;
-$msBlack: #101314;
+$rsBrand: #14a19c;
+$rsPrimary: #a6deda;
+$rsPrimaryDark: #41c8c3;
+$rsPrimaryLight: #d9e9ea;
+$rsSecondary: #002b49;
+$rsTertiary: #00848d;
+$rsSuccess: #2cc692;
+$rsWarning: #ffa800;
+$rsError: #e54852;
+$rsErrorDark: firebrick;
+$rsInfo: #4373c7;
+$rsInfoLight: #747bff;
+$rsInfoDark: #213547;
+$rsGrey: #626b73;
+$rsGreyLight: #96a4b0;
+$rsGreyDark: #3d4246;
+$rsWhite: #fffdfa;
+$rsCream: #f2ede9;
+$rsCreamLight: #fbf8f5;
+$rsCreamDark: #dde1e2;
+$rsBlack: #101314;
 
-$msYoutube: #FF0000;
-$msDarkBlue: #4a7588;
+$rsYoutube: #FF0000;
+$rsDarkBlue: #4a7588;
 
-$msPrimaryGradient: linear-gradient(
+$rsPrimaryGradient: linear-gradient(
   0deg, 
   rgba(196,231,226,1) 0%, 
   rgba(196,231,226,1) 25%, 
   rgba(166,222,218,1) 82%
 );
 
-$msPrimaryGradientTest: linear-gradient(
+$rsPrimaryGradientTest: linear-gradient(
   0deg,
-  $msPrimaryLight 0%,
-  $msPrimaryLight 25%,
-  $msPrimaryDark 82%
+  $rsPrimaryLight 0%,
+  $rsPrimaryLight 25%,
+  $rsPrimaryDark 82%
 );

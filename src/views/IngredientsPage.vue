@@ -33,17 +33,7 @@
           :key="index"
           class="ingredients__details"
         >
-          <div v-if="render">
-            <IngredientsImage :ingredient="computedIngredientsImage" />
-          </div>
-          <div v-else>
-            <img
-              src="https://via.placeholder.com/150"
-              alt="placeholder"
-              class="ingredients__detailsImg"
-            />
-          </div>
-
+          <IngredientsImage :ingredient="computedIngredientsImage" />
           <div class="ingredients__detailsText">
             <h2>{{ item.strIngredient }}</h2>
             <p
@@ -65,7 +55,7 @@
 </template>
 
 <script setup>
-import { onMounted, ref, computed, watch, watchEffect } from 'vue';
+import { onMounted, ref, computed } from 'vue';
 import { useRouter } from 'vue-router';
 import IngredientsImage from '@/components/ingredients__image.vue';
 
@@ -75,20 +65,17 @@ import store from '@/store';
 const router = useRouter();
 const search = ref('');
 const ingredients = ref([]);
-const render = ref(true);
 
-watchEffect(() => {
-  if (ingredients.value) {
-    render.value = true;
-  } else {
-    render.value = false;
-  }
+const paragraphs = computed(() => {
+  const description = ingredients.value.strDescription;
+  const results = description.split('.').join('');
+  console.log(results);
+  return results;
 });
 
 const computedIngredients = computed(() => {
   // eslint-disable-next-line vue/no-ref-as-operand
   if (!computedIngredients) return ingredients;
-
   return ingredients.value.filter((i) =>
     i.strIngredient.toLowerCase().includes(search.value.toLowerCase())
   );
